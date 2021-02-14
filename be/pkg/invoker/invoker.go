@@ -1,14 +1,14 @@
 package invoker
 
 import (
-	"git.yitum.com/mygomod/proto/gocn/gen/resourcesrv"
-	"git.yitum.com/mygomod/proto/gocn/gen/usersrv"
 	"github.com/gotomicro/ego-component/eetcd"
 	"github.com/gotomicro/ego-component/eetcd/registry"
 	"github.com/gotomicro/ego/client/egrpc"
 	"github.com/gotomicro/ego/client/egrpc/resolver"
 	"github.com/gotomicro/ego/core/elog"
 	"github.com/gotomicro/ego/server/egin"
+	"github.com/gotomicro/fast-gocn/proto/gocn/gen/resourcesrv"
+	"github.com/gotomicro/fast-gocn/proto/gocn/gen/usersrv"
 )
 
 var (

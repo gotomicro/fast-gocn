@@ -4,6 +4,19 @@ package com.github.gotomicro.fastgocn.proto.user;
 
 service User {
   rpc LoginWechat (LoginWechatRequest) returns (LoginWechatReply) {} // 微信登录请求
+  rpc CheckWechatToken (CheckWechatTokenRequest) returns (CheckWechatTokenReply) {} // 检查微信token
+}
+
+// 获取token信息
+message CheckWechatTokenRequest {
+  string token = 1;
+}
+
+// 获取用户信息
+message CheckWechatTokenReply {
+  int64  uid = 1;
+  string nickname = 2;
+  string avatar = 3;
 }
 
 // 微信登录请求
