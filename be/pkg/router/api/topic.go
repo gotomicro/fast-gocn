@@ -3,8 +3,8 @@ package api
 import (
 	"strconv"
 
-	"git.yitum.com/mygomod/proto/gocn/gen/resourcesrv"
 	"github.com/gin-gonic/gin"
+	"github.com/gotomicro/fast-gocn/proto/gocn/gen/resourcesrv"
 
 	"gocn-wechat-be/pkg/invoker"
 	"gocn-wechat-be/pkg/router/core"

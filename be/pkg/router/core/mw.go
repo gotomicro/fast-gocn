@@ -1,7 +1,6 @@
 package core
 
 import (
-	"git.yitum.com/mygomod/proto/gocn/gen/usersrv"
 	"github.com/gin-gonic/gin"
 	"gocn-wechat-be/pkg/invoker"
 	"net/http"
