@@ -1,6 +1,6 @@
 syntax = "proto3";
 option go_package = "gocn/gen/usersrv";
-package com.yitum.git.user;
+package com.github.gotomicro.fastgocn.proto.user;
 
 service User {
   rpc LoginWechat (LoginWechatRequest) returns (LoginWechatReply) {} // 微信登录请求

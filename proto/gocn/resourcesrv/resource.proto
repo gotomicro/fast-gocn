@@ -1,6 +1,6 @@
 syntax = "proto3";
 option go_package = "gocn/gen/resourcesrv";
-package com.yitum.git.resource;
+package com.github.gotomicro.fastgocn.proto.resource;
 
 service Resource {
   rpc TopicCateList(TopicCateListReq) returns (TopicCateListReply) {}

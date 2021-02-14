@@ -1,4 +1,4 @@
-module git.yitum.com/mygomod/proto
+module github.com/gotomicro/fast-gocn/proto
 
 go 1.15
 
