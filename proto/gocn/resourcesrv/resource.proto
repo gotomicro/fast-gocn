@@ -10,7 +10,6 @@ service Resource {
 
 message TopicInfoReq {
   int32  topicId = 1;
-  int64 uid = 2;
 }
 
 message TopicInfoReply {
@@ -41,8 +40,6 @@ message Topic {
   bytes bodyHtml = 9;
   bytes body = 10;
   int32 viewCount = 11;
-  bool liked = 12;
-  bool collected = 13;
   int32 collectedCount = 14;
 }
 
@@ -62,5 +59,4 @@ message TopicCate {
 message ColumnListPageReq {
   int32 currentPage = 1;
   int32 cid = 2;
-  int64 uid = 3;
 }

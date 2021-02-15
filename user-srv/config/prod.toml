@@ -1,0 +1,31 @@
+[wechat]
+    appID = "your app id"
+    appSecret = "your app secret"
+[redis.user]
+    debug = true
+    addr = "127.0.0.1:6479"
+[token]
+    tokenPrefix = "/gocn/user"
+    accessTokenExpireInterval = 1209600
+[server.grpc]
+    port = 9091
+[server.governor]
+    port = 9092
+[logger.default]
+level ="debug"
+[etcd]
+addrs=["127.0.0.1:2379"]
+[registry]
+    connectTimeout = "1s"
+    secure = false
+[mysql.user]
+    connMaxLifetime = "300s"
+    debug = true
+    dsn = "user:password@tcp(127.0.0.1:3306)/gocn_user?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local&timeout=1s&readTimeout=3s&writeTimeout=3s"
+    level = "panic"
+    maxIdleConns = 50
+    maxOpenConns = 100
+    enableDetailSQL = true
+    enableAccessInterceptor  = true
+    enableAccessInterceptorReply = true
+    enableAccessInterceptorReq   = true
