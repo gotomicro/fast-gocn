@@ -5,3 +5,4 @@ user-srv
 bin
 bin.tar.gz
 etc.tar.gz
+logs
