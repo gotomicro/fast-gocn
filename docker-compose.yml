@@ -1,0 +1,92 @@
+version: "3.9"
+services:
+  mysql:
+    container_name: "fast-gocn-mysql"
+    image: mysql:5.7.30
+    volumes:
+    - ./resource-srv/data/sql:/docker-entrypoint-initdb.d
+#    networks:
+#      - custom-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=1q2w3e
+      - MYSQL_DATABASE=fastgocn
+      - MYSQL_USER=fastgocn
+      - MYSQL_PASSWORD=helloguys
+  etcd:
+    container_name: "fast-gocn-etcd"
+#    networks:
+#      - custom-net
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+    image: bitnami/etcd
+  redis:
+    container_name: "fast-gocn-redis"
+    image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+#    networks:
+#      - custom-net
+  user-srv:
+    environment:
+      - GOPROXY=https://goproxy.cn
+      - EGO_DEBUG=true
+    image: golang:latest
+    volumes:
+        - ./user-srv:/go/src/fast-gocn/user-srv
+    working_dir: /go/src/fast-gocn/user-srv
+    command: >
+      sh -c "
+      go run main.go --config=config/docker.toml --job=install
+      && go run main.go --config=config/docker.toml
+      "
+    container_name: fastgocn-user-srv
+#    networks:
+#      - custom-net
+    links:
+      - mysql
+      - redis
+      - etcd
+  resource-srv:
+    image: golang:latest
+    environment:
+      - GOPROXY=https://goproxy.cn
+      - EGO_DEBUG=true
+    volumes:
+      - ./resource-srv:/go/src/fast-gocn/resrouce-srv
+    working_dir: /go/src/fast-gocn/resrouce-srv
+#    command: go env -w GOPROXY="https://goproxy.cn" && go run main.go --config=config/docker.toml
+    command: >
+      sh -c "
+      go run main.go --config=config/docker.toml --job=install
+      && go run main.go --config=config/docker.toml
+      "
+    container_name: fastgocn-resrouce-srv
+#    networks:
+#      - custom-net
+    links:
+      - mysql
+      - redis
+      - etcd
+  wechat-be:
+    image: golang:latest
+    environment:
+      - GOPROXY=https://goproxy.cn
+      - EGO_DEBUG=true
+    volumes:
+      - ./be:/go/src/fast-gocn/wechat-be
+    working_dir: /go/src/fast-gocn/wechat-be
+    command: go run main.go --config=config/docker.toml
+    container_name: wechat-be
+#    networks:
+#      - custom-net
+    ports:
+    - "8110:8010"
+    links:
+      - user-srv
+      - resource-srv
+      - redis
+      - etcd
+#networks:
+#  custom-net:
+#    external:
+#      name: fastgocn

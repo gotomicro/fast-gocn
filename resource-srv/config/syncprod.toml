@@ -1,0 +1,21 @@
+[server.http]
+    port = 9111
+[server.grpc]
+    port = 9112
+[server.governor]
+    port = 9113
+[logger.default]
+    level = "debug"
+[etcd]
+    addrs=["127.0.0.1:2379"]
+[registry]
+    connectTimeout = "1s"
+    secure = false
+[mysql.video]
+    connMaxLifetime = "300s"
+#    debug = true
+    rawDebug = true
+    dsn = "user:password@tcp(127.0.0.1:3306)/gocn_resource?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local&timeout=1s&readTimeout=3s&writeTimeout=3s"
+    level = "panic"
+    maxIdleConns = 50
+    maxOpenConns = 100

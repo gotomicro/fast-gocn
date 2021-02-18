@@ -1,0 +1,41 @@
+syntax = "proto3";
+option go_package = "gocn/gen/usersrv";
+package com.github.gotomicro.fastgocn.proto.user;
+
+service User {
+  rpc LoginWechat (LoginWechatRequest) returns (LoginWechatReply) {} // 微信登录请求
+  rpc CheckWechatToken (CheckWechatTokenRequest) returns (CheckWechatTokenReply) {} // 检查微信token
+}
+
+// 获取token信息
+message CheckWechatTokenRequest {
+  string token = 1;
+}
+
+// 获取用户信息
+message CheckWechatTokenReply {
+  int64  uid = 1;
+  string nickname = 2;
+  string avatar = 3;
+}
+
+// 微信登录请求
+message LoginWechatRequest {
+  string wxUserCode = 1;
+  string wxUserEncryptedData = 2;
+  string wxUserIv = 3;
+  string wxPhoneCode = 4;
+  string wxPhoneEncryptedData = 5;
+  string wxPhoneIv = 6;
+  string clientIp = 7;
+}
+
+// 微信登录响应
+message LoginWechatReply {
+  int64  uid = 1;
+  string nickname = 2;
+  string avatar = 3;
+  string token = 4;     // access token
+  string phone = 5;
+  int64  expiredAt = 6; // 过期的时间
+}

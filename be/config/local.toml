@@ -1,0 +1,24 @@
+[server.http]
+host = "0.0.0.0"
+port = 8010
+[server.governor]
+host = "0.0.0.0"
+port = 8011
+[logger.default]
+level = "debug"
+[etcd]
+addrs=["172.22.0.1:2379"]
+[registry]
+connectTimeout = "1s"
+secure = false
+[grpc.usersrv]
+addr = "etcd:///user-srv"
+balancerName = "round_robin" # 默认值
+block =  false # 默认值
+dialTimeout = "1s" # 默认值
+[grpc.resourcesrv]
+addr = "etcd:///resource-srv"
+balancerName = "round_robin" # 默认值
+block =  false # 默认值
+readTimeout = "100s"
+dialTimeout = "1s" # 默认值

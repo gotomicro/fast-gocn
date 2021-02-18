@@ -1,0 +1,62 @@
+syntax = "proto3";
+option go_package = "gocn/gen/resourcesrv";
+package com.github.gotomicro.fastgocn.proto.resource;
+
+service Resource {
+  rpc TopicCateList(TopicCateListReq) returns (TopicCateListReply) {}
+  rpc TopicList(ColumnListPageReq) returns(TopicListReply) {}
+  rpc TopicInfo(TopicInfoReq) returns (TopicInfoReply) {}
+}
+
+message TopicInfoReq {
+  int32  topicId = 1;
+}
+
+message TopicInfoReply {
+  Topic topic = 1;
+}
+
+message TopicListReply {
+  repeated Topic topicList = 1;
+  int32 total = 2;
+}
+
+message GoCNUser {
+  int32 id = 1;
+  string username = 2;
+  string avatar = 3;
+}
+
+
+message Topic {
+  int32 id = 1;
+  bytes summary = 2;
+  string coverUrl = 3;
+  GoCNUser user = 4;
+  int32 repliesCount = 5;
+  int32 likedCount = 6;
+  int64 createdAt = 7;
+  string title = 8;
+  bytes bodyHtml = 9;
+  bytes body = 10;
+  int32 viewCount = 11;
+  int32 collectedCount = 14;
+}
+
+message TopicCateListReq {
+}
+
+
+message TopicCateListReply {
+  repeated TopicCate topicCateList = 1;
+}
+
+message TopicCate {
+  int32 id = 1;
+  string name = 2;
+}
+
+message ColumnListPageReq {
+  int32 currentPage = 1;
+  int32 cid = 2;
+}

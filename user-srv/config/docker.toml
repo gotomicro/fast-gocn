@@ -1,0 +1,24 @@
+[wechat]
+appID = "your app id"
+appSecret = "your app secret"
+[redis.user]
+debug = true
+addr = "redis:6379"
+[token]
+tokenPrefix = "/gocn/user"
+[server.grpc]
+port = 9091
+[server.governor]
+port = 9092
+[etcd]
+addrs = ["etcd:2379"]
+[registry]
+connectTimeout = "1s"
+secure = false
+[mysql.user]
+connMaxLifetime = "300s"
+debug = true
+dsn = "fastgocn:helloguys@tcp(mysql:3306)/fastgocn?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local&timeout=1s&readTimeout=3s&writeTimeout=3s"
+level = "panic"
+maxIdleConns = 50
+maxOpenConns = 100
