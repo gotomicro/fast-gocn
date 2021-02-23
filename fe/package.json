@@ -1,0 +1,26 @@
+{
+  "name": "gocn-wechat-fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "axios": ">=0.21.1",
+    "marked": "^1.2.7",
+    "mockjs": "^1.1.0",
+    "thorui-uni": "^1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mygomod/gocn-wechat-fe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mygomod/gocn-wechat-fe/issues"
+  },
+  "homepage": "https://github.com/mygomod/gocn-wechat-fe#readme"
+}
