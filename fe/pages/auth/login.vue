@@ -19,11 +19,13 @@
 					<text class="tit">快捷登录</text>
 				</view>
 				<view class="list row">
+					<!-- #ifdef MP-WEIXIN -->
 					<button open-type="getUserInfo" @getuserinfo="getUserDetailInfo">
 						<view class="item column center">
 							<image class="icon" src="/static/icon/wx-login.png"></image>
 						</view>
 					</button>
+					<!-- #endif -->	
 				</view>
 			</view>
 		</view>
