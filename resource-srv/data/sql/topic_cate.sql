@@ -8,7 +8,7 @@ create table topic_cate
     updated_at datetime     null,
     deleted_at datetime     null,
     cnt_topic  int          not null
-);
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 create index idx_topic_cate_node_id
     on topic_cate (node_id);
