@@ -154,8 +154,6 @@ github.com/gotomicro/ego-component/eetcd v0.1.2 h1:pFqnseTDDaAk9c82KzufAUg/dcIEH
 github.com/gotomicro/ego-component/eetcd v0.1.2/go.mod h1:/x+kTLbog8dCbEcI6FR7YwkezcZwGegdteahX2dwCAA=
 github.com/gotomicro/ego-component/egorm v0.1.4 h1:syEtdhqjbKORS4iVT07EAKZMLB5X6gy+YGzqGFZ+BaM=
 github.com/gotomicro/ego-component/egorm v0.1.4/go.mod h1:2ee5GLFr1hglse07PfEwlrP64eTRikqiMfHQLl5JE+g=
-github.com/gotomicro/fast-gocn/proto v0.0.0-20210214134845-2ff23bab1a5c h1:7buf7LW90spalWvIGyXejazKFddM6qOPzf/honAZDVg=
-github.com/gotomicro/fast-gocn/proto v0.0.0-20210214134845-2ff23bab1a5c/go.mod h1:8zpsxGBgl+rCJrQEic2Y/6/RgzoReJdQ0fsg1UAnLY0=
 github.com/gotomicro/fast-gocn/proto v0.0.0-20210216124410-681300dc7fb0 h1:DX2BrK16MJaTSlm0HThLdvwu/Xb+eGW0nyOtN/pTh9k=
 github.com/gotomicro/fast-gocn/proto v0.0.0-20210216124410-681300dc7fb0/go.mod h1:8zpsxGBgl+rCJrQEic2Y/6/RgzoReJdQ0fsg1UAnLY0=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.1-0.20190118093823-f849b5445de4/go.mod h1:FiyG127CGDf3tlThmgyCl78X/SZQqEOJBCDaAfeWzPs=

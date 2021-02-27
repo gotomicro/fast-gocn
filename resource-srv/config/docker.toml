@@ -13,7 +13,7 @@ addrs=["etcd:2379"]
     secure = false
 [mysql.video]
     connMaxLifetime = "300s"
-    debug = true
+#    debug = true
     dsn = "fastgocn:helloguys@tcp(mysql:3306)/fastgocn?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local&timeout=1s&readTimeout=3s&writeTimeout=3s"
     level = "panic"
     maxIdleConns = 50
