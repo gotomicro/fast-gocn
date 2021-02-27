@@ -10,7 +10,7 @@ import (
 	"resource-srv/pkg/model/mysql"
 )
 
-var topicCateNodeIds = [8]int{18, 3, 1, 25, 2, 15, 46, 12}
+var topicCateNodeIds = [8]int{48, 50, 9, 20, 55, 39, 28, 8}
 
 func (r *Resource) TopicList(ctx context.Context,
 	req *resourcesrv.ColumnListPageReq) (*resourcesrv.TopicListReply, error) {
