@@ -10,7 +10,7 @@ import (
 	"resource-srv/pkg/model/mysql"
 )
 
-var topicCateNodeIds = [8]int{48, 50, 9, 20, 55, 39, 28, 8}
+var topicCateNodeIds = [8]int{15, 18, 25, 1, 13, 3, 40, 47}
 
 func (r *Resource) TopicList(ctx context.Context,
 	req *resourcesrv.ColumnListPageReq) (*resourcesrv.TopicListReply, error) {
@@ -30,11 +30,10 @@ func (r *Resource) TopicList(ctx context.Context,
 	return r.buildTopicPBs(resp, total)
 }
 
-func (r *Resource) buildTopicPBs(data []mysql.Topic, total int) (*resourcesrv.TopicListReply, error){
+func (r *Resource) buildTopicPBs(data []mysql.Topic, total int) (*resourcesrv.TopicListReply, error) {
 	// 进一步判断，用户有没有点赞
 	return buildTopicPBFromDB(total, data), nil
 }
-
 
 func (r *Resource) TopicCateList(context.Context, *resourcesrv.TopicCateListReq) (*resourcesrv.TopicCateListReply, error) {
 	respCates := make([]*resourcesrv.TopicCate, 0)
