@@ -1,4 +1,4 @@
-syntax="proto3"
+syntax="proto3";
 option go_package = "gocn/gen/errcodepb";
 package com.github.gotomicro.fastgocn.proto.errcode;
 import "google/protobuf/descriptor.proto";
