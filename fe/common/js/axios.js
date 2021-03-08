@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import store from '@/store'
-let localURL = "http://127.0.0.1:8010"
+let localURL = "http://127.0.0.1:8110"
 const service = axios.create({
 	withCredentials: true,
 	crossDomain: true,

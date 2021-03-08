@@ -1,1 +1,0 @@
-CREATE DATABASE  `gocn_resource` DEFAULT CHARSET=utf8mb4;

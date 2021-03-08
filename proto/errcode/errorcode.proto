@@ -1,0 +1,22 @@
+syntax="proto3"
+option go_package = "gocn/gen/errcodepb";
+package com.github.gotomicro.fastgocn.proto.errcode;
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.EnumValueOptions{
+  string name=12345;
+}
+
+enum ErrCodeP{
+  OK = 0;
+  Err=1;
+
+  //用户相关服务
+  LoginWechatServer = 10001 [(name) = "登录微信服务错误"];
+  LoginWechatMysqlUserOpen = 10002 [(name) = "获取数据库里用户数据失败"];
+  LoginWechatCreateUserOpen = 10003 [(name)="创建User Open失败"];
+  LoginWechatCreateUser = 10004 [(name)="创建用户失败"];
+  LoginWechatEncodeBindToken = 10005 [(name) = "生成用户绑定token失败"];
+  LoginWechatUserOpenUpdateUid = 10006 [(name)= "useropen表更新uid失败"];
+  LoginWechatUserOpenUidStatus = 10007 [(name) = "user open表用户态不正确"];
+}
